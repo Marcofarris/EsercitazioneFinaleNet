@@ -1,0 +1,29 @@
+﻿@model UserLogin
+
+@using (Html.BeginForm())
+{
+    <div class="form-outline mb-4">
+        <div class="m-2">
+        @Html.LabelFor(model=>model.UserName)
+            <div>
+            @Html.EditorFor(model => model.UserName)
+            </div>
+        </div>
+
+        <div class="m-2">
+        @Html.LabelFor(model=>model.Password)
+            <div>
+            @Html.EditorFor(model => model.Password)
+            </div>
+        </div>
+        
+    @if (Model.ShowError)
+    {
+        <p class="bg-danger">Credenziali errate</p>
+    }
+
+    <input class="btn btn-primary btn-block mb-4 mt-4" type="submit" value="Save" />
+    </div>
+        
+}
+
